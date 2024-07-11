@@ -1,7 +1,6 @@
 {
     "intents": [
         {
-            "intent": "greeting",
             "tag": "saludos",
             "patterns": [
                 "Hola",
@@ -28,9 +27,9 @@
             ]
         },
         {
-            "intent": "Bacterial_spot",
-            "tag": "consejos",
+            "tag": "mancha_bacteriana",
             "patterns": [
+                "manchas bacterianas",
                 "Mi planta tiene manchas bacterianas",
                 "Hay manchas bacterianas en mi planta",
                 "Manchas bacterianas en las hojas",
@@ -43,9 +42,9 @@
             ]
         },
         {
-            "intent": "Black_Measles",
-            "tag": "consejos",
+            "tag": "sarampion_negro",
             "patterns": [
+                "sarampión negro",
                 "Mi planta tiene sarampión negro",
                 "Hay sarampión negro en mi planta",
                 "Sarampión negro en las hojas",
@@ -58,9 +57,9 @@
             ]
         },
         {
-            "intent": "Black_rot",
-            "tag": "consejos",
+            "tag": "podredumbre_negra",
             "patterns": [
+                "podredumbre negra",
                 "Mi planta tiene podredumbre negra",
                 "Hay podredumbre negra en mi planta",
                 "Podredumbre negra en las hojas",
@@ -73,9 +72,9 @@
             ]
         },
         {
-            "intent": "Desconocido",
-            "tag": "consejos",
+            "tag": "desconocido",
             "patterns": [
+                "desconocido",
                 "No sé qué tiene mi planta",
                 "Mi planta tiene una plaga desconocida",
                 "No puedo identificar la plaga en mi planta",
@@ -88,9 +87,9 @@
             ]
         },
         {
-            "intent": "Early_blight",
-            "tag": "consejos",
+            "tag": "tizon_temprano",
             "patterns": [
+                "Tizón temprano",
                 "Mi planta tiene tizón temprano",
                 "Hay tizón temprano en mi planta",
                 "Tizón temprano en las hojas",
@@ -103,9 +102,9 @@
             ]
         },
         {
-            "intent": "Late_blight",
-            "tag": "consejos",
+            "tag": "tizon_tardio",
             "patterns": [
+                "Tizón tardío",
                 "Mi planta tiene tizón tardío",
                 "Hay tizón tardío en mi planta",
                 "Tizón tardío en las hojas",
@@ -118,9 +117,9 @@
             ]
         },
         {
-            "intent": "Leaf_scorch",
-            "tag": "consejos",
+            "tag": "quemadura_hoja",
             "patterns": [
+                "quemadura de hojas",
                 "Mi planta tiene quemadura de hojas",
                 "Hay quemadura de hojas en mi planta",
                 "Quemadura de hojas en mi planta",
@@ -133,9 +132,9 @@
             ]
         },
         {
-            "intent": "Rust",
-            "tag": "consejos",
+            "tag": "roya",
             "patterns": [
+                "Roya",
                 "Mi planta tiene roya",
                 "Hay roya en mi planta",
                 "Roya en las hojas",
@@ -148,9 +147,9 @@
             ]
         },
         {
-            "intent": "Scab",
-            "tag": "consejos",
+            "tag": "sarna",
             "patterns": [
+                "Sarna",
                 "Mi planta tiene sarna",
                 "Hay sarna en mi planta",
                 "Sarna en las hojas",
@@ -163,9 +162,9 @@
             ]
         },
         {
-            "intent": "Sin_plaga",
-            "tag": "consejos",
+            "tag": "sin_plaga",
             "patterns": [
+                "Sin plaga",
                 "Mi planta está bien",
                 "No hay plagas en mi planta",
                 "Mi planta está saludable",
@@ -179,9 +178,9 @@
             ]
         },
         {
-            "intent": "Spot",
-            "tag": "consejos",
+            "tag": "manchas",
             "patterns": [
+                "Manchas",
                 "Mi planta tiene manchas",
                 "Hay manchas en mi planta",
                 "Manchas en las hojas",

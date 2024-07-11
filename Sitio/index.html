@@ -86,8 +86,8 @@
            <div class="swiper-slide" data-slide-bg="images/slider-1-slide-6-1770x742.jpg">
               <div class="swiper-slide-caption section-md">
                 <div class="container">
-                  <h1 data-caption-animate="fadeInLeft" data-caption-delay="0">Award-Winning Software</h1>
-                  <p class="text-width-large" data-caption-animate="fadeInRight" data-caption-delay="100">The software solutions developed by our company have been numerously awarded for usability and innovative features.</p><a class="button button-primary button-ujarak" href="#modalCta" data-toggle="modal" data-caption-animate="fadeInUp" data-caption-delay="200">Conocer más</a>
+                  <h1 data-caption-animate="fadeInLeft" data-caption-delay="0">Plataforma con IA para ayudarte</h1>
+                  <p class="text-width-large" data-caption-animate="fadeInRight" data-caption-delay="100">Contamos Ia para ayudar tus necesidades sobre las plagas.</p><a class="button button-primary button-ujarak" href="#modalCta" data-toggle="modal" data-caption-animate="fadeInUp" data-caption-delay="200">Conocer más</a>
                 </div>
               </div>
             </div>
@@ -170,78 +170,41 @@
           <h2 class="wow fadeInLeft">DEMOS</h2>
           <div class="isotope-filters isotope-filters-horizontal">
             <button class="isotope-filters-toggle button button-md button-icon button-icon-right button-default-outline button-wapasha" data-custom-toggle="#isotope-3" data-custom-toggle-hide-on-blur="true" data-custom-toggle-disable-on-blur="true"><span class="icon fa fa-caret-down"></span>Filter</button>
-            <ul class="isotope-filters-list" id="isotope-3">
-              <li><a class="active" href="#" data-isotope-filter="Type 3" data-isotope-group="gallery">ChatBot</a></li>
-              <li><a href="#" data-isotope-filter="Type 1" data-isotope-group="gallery">App</a></li>
-              <li><a href="#" data-isotope-filter="Type 2" data-isotope-group="gallery">Clasificador</a></li>
-            </ul>
+              <a class="active" href="#" data-isotope-filter="Type 3" data-isotope-group="gallery">ChatBot</a></li>
           </div>
-          <div class="row row-30 isotope" data-isotope-layout="fitRows" data-isotope-group="gallery" data-lightgallery="group">
-            
-            <div class="col-sm-6 col-lg-4 col-xxl-3 isotope-item wow fadeInRight" data-filter="Type 1" data-wow-delay=".1s">
-              <!-- Thumbnail Classic-->
-              <article class="thumbnail thumbnail-classic thumbnail-md">
-                <div class="thumbnail-classic-figure"><img src="images/fullwidth-gallery-2-420x350.jpg" alt="" width="420" height="350"/>
-                </div>
-                <div class="thumbnail-classic-caption">
-                  <div class="thumbnail-classic-title-wrap"><a class="icon fl-bigmug-line-zoom60" href="images/grid-gallery-2-1200x800-original.jpg" data-lightgallery="item"><img src="images/fullwidth-gallery-2-420x350.jpg" alt="" width="420" height="350"/></a>
-                    <h5 class="thumbnail-classic-title"><a href="#">Aplicación</a></h5>
-                  </div>
-                  <p class="thumbnail-classic-text">Interfaz de nuestra aplicación</p>
-                </div>
-              </article>
-            </div>
-            <div class="col-sm-6 col-lg-4 col-xxl-3 isotope-item wow fadeInRight" data-filter="Type 2" data-wow-delay=".2s">
-              <!-- Thumbnail Classic-->
-              <article class="thumbnail thumbnail-classic thumbnail-md">
-                <div class="thumbnail-classic-figure"><img src="images/fullwidth-gallery-3-420x350.jpg" alt="" width="420" height="350"/>
-                </div>
-                <div class="thumbnail-classic-caption">
-                  <div class="thumbnail-classic-title-wrap"><a class="icon fl-bigmug-line-zoom60" href="images/grid-gallery-3-1200x800-original.jpg" data-lightgallery="item"><img src="images/fullwidth-gallery-3-420x350.jpg" alt="" width="420" height="350"/></a>
-                    <h5 class="thumbnail-classic-title"><a href="#">Clasificador</a></h5>
-                  </div>
-                  <p class="thumbnail-classic-text">Funcionamiento del clasificador</p>
-                </div>
-              </article>
-            </div>
-            <div class="col-sm-6 col-lg-4 col-xxl-3 isotope-item wow fadeInRight" data-filter="Type 3" data-wow-delay=".3s">
-              <!-- Thumbnail Classic-->
-              <article class="thumbnail thumbnail-classic thumbnail-md">
-                <div class="chat-container">
-                  <div class="chat-log" id="chat-log"></div>
-                  <input type="text" id="chat-input" class="chat-input" placeholder="Escribe un mensaje...">
-                  <button id="chat-send" class="chat-send">Enviar</button>
-              </div>
-              <script>
-                  document.getElementById('chat-send').addEventListener('click', function() {
-                      var input = document.getElementById('chat-input').value;
-                      var chatLog = document.getElementById('chat-log');
-                      var userMessage = document.createElement('div');
-                      userMessage.className = 'user';
-                      userMessage.innerText = input;
-                      chatLog.appendChild(userMessage);
-          
-                      fetch('/chatbot', {
-                          method: 'POST',
-                          headers: {
-                              'Content-Type': 'application/json'
-                          },
-                          body: JSON.stringify({message: input})
-                      })
-                      .then(response => response.json())
-                      .then(data => {
-                          var botMessage = document.createElement('div');
-                          botMessage.className = 'bot';
-                          botMessage.innerText = data.response;
-                          chatLog.appendChild(botMessage);
-                          document.getElementById('chat-input').value = '';
-                      });
-                  });
-              </script>
-              </article>
-            </div>
-          </div>
-        </div>
+      </section>
+      <section> 
+        <div class="chat-container">
+          <div class="chat-log" id="chat-log"></div>
+          <input type="text" id="chat-input" class="chat-input" placeholder="Escribe un mensaje...">
+          <button id="chat-send" class="chat-send">Enviar</button>
+      </div>
+      <script>
+          document.getElementById('chat-send').addEventListener('click', function() {
+              var input = document.getElementById('chat-input').value;
+              var chatLog = document.getElementById('chat-log');
+              var userMessage = document.createElement('div');
+              userMessage.className = 'user';
+              userMessage.innerText = input;
+              chatLog.appendChild(userMessage);
+  
+              fetch('/chatbot', {
+                  method: 'POST',
+                  headers: {
+                      'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify({message: input})
+              })
+              .then(response => response.json())
+              .then(data => {
+                  var botMessage = document.createElement('div');
+                  botMessage.className = 'bot';
+                  botMessage.innerText = data.response;
+                  chatLog.appendChild(botMessage);
+                  document.getElementById('chat-input').value = '';
+              });
+          });
+      </script>
       </section>
 
       <!-- Years of experience-->
