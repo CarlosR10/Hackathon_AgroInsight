@@ -1,7 +1,7 @@
 package com.example.database_test;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -41,22 +41,21 @@ public class PlantaAdapter extends RecyclerView.Adapter<PlantaAdapter.PlantaView
         }
         holder.textViewNombre.setText(planta.getNombreComun());
         holder.textViewFecha.setText(planta.getFechaGuardado());
+
+        holder.itemView.setOnClickListener(view -> {
+            Intent intent = new Intent(context, PlantasActivity.class);
+            intent.putExtra("idPlanta", planta.getIdPlanta());
+            intent.putExtra("nombreComun", planta.getNombreComun());
+            intent.putExtra("imagen", planta.getImagen());
+            intent.putExtra("fechaGuardado", planta.getFechaGuardado());
+            intent.putExtra("tipoPlaga", planta.getTipoPlaga());
+            context.startActivity(intent);
+        });
     }
 
     @Override
     public int getItemCount() {
         return plantas.size();
-    }
-
-    @SuppressLint("NotifyDataSetChanged")
-    public void setPlantas(List<Planta> nuevasPlantas) {
-        plantas.clear();
-        plantas.addAll(nuevasPlantas);
-        notifyDataSetChanged();
-    }
-
-    public void updatePlantas(List<Planta> nuevasPlantas) {
-        setPlantas(nuevasPlantas);
     }
 
     public static class PlantaViewHolder extends RecyclerView.ViewHolder {

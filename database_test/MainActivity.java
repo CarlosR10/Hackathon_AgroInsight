@@ -24,6 +24,7 @@ import static com.example.database_test.DatabaseManager.COLUMNA_ID_PLANTA;
 import static com.example.database_test.DatabaseManager.COLUMNA_NOMBRE_COMUN;
 import static com.example.database_test.DatabaseManager.COLUMNA_IMAGEN;
 import static com.example.database_test.DatabaseManager.COLUMNA_FECHA_GUARDADO;
+import static com.example.database_test.DatabaseManager.COLUMNA_TIPO_PLAGA;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -87,7 +88,6 @@ public class MainActivity extends AppCompatActivity {
         snapHelper.attachToRecyclerView(listViewPlantas);
     }
 
-
     private List<Planta> obtenerPlantas() {
         List<Planta> plantas = new ArrayList<>();
         SQLiteDatabase db = dbManager.getReadableDatabase();
@@ -99,8 +99,9 @@ public class MainActivity extends AppCompatActivity {
                 @SuppressLint("Range") String nombreComun = cursor.getString(cursor.getColumnIndex(COLUMNA_NOMBRE_COMUN));
                 @SuppressLint("Range") byte[] imagen = cursor.getBlob(cursor.getColumnIndex(COLUMNA_IMAGEN));
                 @SuppressLint("Range") String fechaGuardado = cursor.getString(cursor.getColumnIndex(COLUMNA_FECHA_GUARDADO));
+                @SuppressLint("Range") String tipoPlaga = cursor.getString(cursor.getColumnIndex(COLUMNA_TIPO_PLAGA));
 
-                plantas.add(new Planta(idPlanta, nombreComun, imagen, fechaGuardado));
+                plantas.add(new Planta(idPlanta, nombreComun, imagen, fechaGuardado, tipoPlaga));
             } while (cursor.moveToNext());
         }
 
@@ -108,14 +109,4 @@ public class MainActivity extends AppCompatActivity {
         db.close();
         return plantas;
     }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        // Obtener la lista actualizada de plantas
-        List<Planta> plantas = obtenerPlantas();
-        // Actualizar el adaptador con la nueva lista de plantas
-        adapter.updatePlantas(plantas);
-    }
-
 }
